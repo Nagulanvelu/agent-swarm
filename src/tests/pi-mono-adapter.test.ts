@@ -476,6 +476,7 @@ describe("createPiRuntimeAuth", () => {
     auth: { apiKey: "example-gemini-runtime" },
   });
 });
+});
 
 describe("Pi-mono event normalization", () => {
   test("extractPiAssistantText ignores user messages", () => {
