@@ -232,7 +232,7 @@ describe("checkPiMonoCredentials", () => {
     ).toBe(false);
   });
 
-    test("strict: MODEL_OVERRIDE=google/... accepts GEMINI_API_KEY", async () => {
+  test("strict: MODEL_OVERRIDE=google/... accepts GEMINI_API_KEY", async () => {
     const env = {
       MODEL_OVERRIDE: "google/gemini-3-flash-preview",
       GEMINI_API_KEY: "x",
@@ -259,11 +259,7 @@ describe("checkPiMonoCredentials", () => {
     });
 
     expect(status.ready).toBe(false);
-    expect(status.missing).toEqual([
-      "GOOGLE_API_KEY",
-      "GEMINI_API_KEY",
-      AUTH,
-    ]);
+    expect(status.missing).toEqual(["GOOGLE_API_KEY", "GEMINI_API_KEY", AUTH]);
     expect(status.hint).toContain("GOOGLE_API_KEY / GEMINI_API_KEY");
   });
 
