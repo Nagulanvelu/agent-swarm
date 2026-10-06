@@ -468,14 +468,14 @@ describe("createPiRuntimeAuth", () => {
   });
 
   test("passes GEMINI_API_KEY to pi google runtime auth", async () => {
-  const modelRuntime = await createPiRuntimeAuth({
-    GEMINI_API_KEY: "example-gemini-runtime",
-  });
+    const modelRuntime = await createPiRuntimeAuth({
+      GEMINI_API_KEY: "example-gemini-runtime",
+    });
 
-  await expect(modelRuntime.getAuth("google")).resolves.toMatchObject({
-    auth: { apiKey: "example-gemini-runtime" },
+    await expect(modelRuntime.getAuth("google")).resolves.toMatchObject({
+      auth: { apiKey: "example-gemini-runtime" },
+    });
   });
-});
 });
 
 describe("Pi-mono event normalization", () => {
